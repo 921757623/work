@@ -6,6 +6,7 @@ import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
 import com.example.myhole.HomeScreenFragment
+import com.example.myhole.R
 import com.example.myhole.databinding.ListItemBinding
 import com.example.myhole.model.Hole
 
@@ -24,6 +25,12 @@ class ItemAdapter : ListAdapter<Hole,
     ) : RecyclerView.ViewHolder(binding.root) {
         fun bind(hole: Hole) {
             binding.hole = hole
+            binding.thumbsUp.setOnClickListener {
+                if(hole.isThumb == true)
+                    binding.thumbsUp.setImageResource(R.drawable.ic_thumbs)
+                else
+                    binding.thumbsUp.setImageResource(R.drawable.ic_thumbs_up)
+            }
             binding.executePendingBindings()
         }
     }
