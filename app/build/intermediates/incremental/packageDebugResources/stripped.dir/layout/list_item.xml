@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+                                                       
+                                                   
+
+    
+                 
+                       
+                                                   
+           
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="5dp"
+        app:cardCornerRadius="20dp" android:tag="layout/list_item_0" xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto" xmlns:tools="http://schemas.android.com/tools">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="5dp">
+
+            <TextView
+                android:id="@+id/holeNum"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:textColor="@color/black"
+                android:textSize="13sp"
+                android:tag="binding_1"      
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:text="#10086" />
+
+            <TextView
+                android:id="@+id/date"
+                android:layout_width="wrap_content"
+                android:layout_height="17dp"
+                android:textColor="#CBCBCB"
+                android:textSize="11sp"
+
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/holeNum"
+                tools:text="19:32 2031/32/12" />
+
+            <TextView
+                android:id="@+id/content"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:maxLines="5"
+                android:textColor="#343434"
+                android:textSize="14sp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/date"
+                tools:text="一天晚上，我玩了几个小时的电脑，时针指向“九”了，还意犹未音传到了我的耳边：“九点了，赶快上床睡觉……”一天晚上，我玩了几个小时的电脑，时针指向“九”了，还意犹未尽。这时，令我讨厌的声音传到了我的耳边：“九点了，赶快上床睡觉……”听到这里，我不厌其烦地应了一声：“哦。”虽然嘴上是这么说的，但心里却舍不得离开，听到这里，我不厌其烦地应了一声：“哦。”虽然嘴上是这么说的，但心里却舍不得离开，" />
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="25dp"
+                android:layout_below="@id/content"
+                android:layout_marginTop="10dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/content">
+
+                <ImageView
+                    android:id="@+id/thumbs_up"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="2dp"
+                    android:layout_marginTop="2dp"
+                    android:contentDescription="@string/thumbs_up_description"
+                    android:src="@drawable/ic_thumbs_up" />
+
+                <TextView
+                    android:id="@+id/up_num"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_centerVertical="true"
+                    android:layout_marginStart="6dp"
+                    android:layout_toEndOf="@id/thumbs_up"
+                    android:text="@string/_0"
+                    android:textColor="#B1B1B1" />
+
+                <ImageView
+                    android:id="@+id/img_talk"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="32dp"
+                    android:layout_toEndOf="@id/up_num"
+                    android:contentDescription="@string/comments_description"
+                    app:srcCompat="@drawable/ic_comment" />
+
+                <TextView
+                    android:id="@+id/text_talk"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="6dp"
+                    android:layout_toEndOf="@id/img_talk"
+                    android:textColor="#B1B1B1"
+                    tools:text="12" />
+
+                <ImageView
+                    android:id="@+id/img_star"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="32dp"
+                    android:layout_toEndOf="@id/text_talk"
+                    android:contentDescription="@string/star_description"
+                    app:srcCompat="@drawable/ic_follow_inactive" />
+
+                <TextView
+                    android:id="@+id/text_star"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="6dp"
+                    android:layout_toEndOf="@id/img_star"
+                    android:textColor="#B1B1B1"
+                    tools:ignore="RelativeOverlap"
+                    tools:text="3" />
+
+                <ImageView
+                    android:id="@+id/threePoint"
+                    android:layout_width="25dp"
+                    android:layout_height="25dp"
+                    android:layout_alignParentEnd="true"
+                    android:contentDescription="@string/threepoint_description"
+                    app:srcCompat="@drawable/ic_threepoints" />
+            </RelativeLayout>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.cardview.widget.CardView>
+         

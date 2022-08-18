@@ -1,0 +1,10 @@
+[
+    {
+        "merged": "D:\\MyHole\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\list_item.xml",
+        "source": "D:\\MyHole\\app\\src\\main\\res\\layout\\list_item.xml"
+    },
+    {
+        "merged": "D:\\MyHole\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\home_screen_fragment.xml",
+        "source": "D:\\MyHole\\app\\src\\main\\res\\layout\\home_screen_fragment.xml"
+    }
+]
