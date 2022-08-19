@@ -117,7 +117,7 @@
                     android:layout_marginBottom="0dp"
                     android:layout_toEndOf="@id/text_talk"
                     android:contentDescription="@string/star_description"
-                    app:srcCompat="@drawable/ic_follow_inactive" />
+                    android:tag="binding_7"                                                                     />
 
                 <TextView
                     android:id="@+id/text_star"
@@ -127,7 +127,7 @@
                     android:layout_marginStart="6dp"
                     android:layout_marginBottom="2dp"
                     android:layout_toEndOf="@id/img_star"
-                    android:tag="binding_7"                 
+                    android:tag="binding_8"                 
                     android:textColor="#B1B1B1"
                     tools:ignore="RelativeOverlap"
                     tools:text="3" />

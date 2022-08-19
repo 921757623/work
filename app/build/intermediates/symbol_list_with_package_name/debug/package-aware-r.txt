@@ -2525,6 +2525,7 @@ drawable design_snackbar_background
 drawable ic_baseline_search
 drawable ic_clock_black_24dp
 drawable ic_comment
+drawable ic_follow_active
 drawable ic_follow_inactive
 drawable ic_keyboard_black_24dp
 drawable ic_launcher_background
