@@ -8,6 +8,7 @@ import androidx.databinding.BindingAdapter
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.myhole.R
+import com.example.myhole.data.HustHoleApiStatus
 import com.example.myhole.model.Hole
 
 
@@ -59,6 +60,17 @@ class SpaceItemDecoration(
             outRect.top = topBottom;
             outRect.left = leftRight;
             outRect.bottom = topBottom;
+        }
+    }
+}
+
+@BindingAdapter("apiStatus")
+fun bindStatus(
+    statusImageView: ImageView,
+    status: HustHoleApiStatus?) {
+    when(status) {
+        HustHoleApiStatus.LOADING -> {
+
         }
     }
 }

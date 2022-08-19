@@ -15,6 +15,7 @@ import com.example.myhole.model.Hole
 import com.example.myhole.model.Interact
 import com.example.myhole.network.HustHoleApi
 import com.example.myhole.network.HustHoleApiService
+import okhttp3.ResponseBody
 
 /**
  *@classname ItemAdapter
@@ -36,19 +37,24 @@ class ItemAdapter(
                 it.thumbsUp.setOnClickListener {
                     if (binding.hole?.isThumb == true) {
                         binding.thumbsUp.setImageResource(R.drawable.ic_thumb_inactive)
+                        binding.hole?.thumb = binding.hole?.thumb!! - 1
+                        binding.upNum.text = binding.hole?.thumb.toString()
                         try {
-                            HustHoleApi.retrofitService.postInteractUnLike(Interact(hole.holeID))
+                            HustHoleApi.retrofitService.postInteractUnLike(Interact(hole.holeID)).execute()
                         } catch (e: Exception) {
                             e.printStackTrace()
                         }
                     } else {
                         binding.thumbsUp.setImageResource(R.drawable.ic_thumbs_active)
+                        binding.hole?.thumb = binding.hole?.thumb!! + 1
+                        binding.upNum.text = binding.hole?.thumb.toString()
                         try {
-                            HustHoleApi.retrofitService.postInteractLike(Interact(hole.holeID))
+                            HustHoleApi.retrofitService.postInteractLike(Interact(hole.holeID)).execute()
                         } catch (e: Exception) {
                             e.printStackTrace()
                         }
                     }
+                    binding.hole?.isThumb = !binding.hole?.isThumb!!
                 }
                 it.imgStar.setOnClickListener {
                     if (binding.hole?.isFollow == true) {
@@ -56,7 +62,7 @@ class ItemAdapter(
                         binding.hole?.follow = binding.hole?.follow!! - 1
                         binding.textStar.text = binding.hole?.follow.toString()
                         try {
-                            HustHoleApi.retrofitService.postInteractUnFollow(Interact(hole.holeID))
+                            HustHoleApi.retrofitService.postInteractUnFollow(Interact(hole.holeID)).execute()
                         } catch (e: Exception) {
                             e.printStackTrace()
                         }
@@ -66,13 +72,12 @@ class ItemAdapter(
                         binding.hole?.follow = binding.hole?.follow!! + 1
                         binding.textStar.text = binding.hole?.follow.toString()
                         try {
-                            HustHoleApi.retrofitService.postInteractFollow(Interact(hole.holeID))
+                            HustHoleApi.retrofitService.postInteractFollow(Interact(hole.holeID)).execute()
                         } catch (e: Exception) {
                             e.printStackTrace()
                         }
                     }
                     binding.hole?.isFollow = !binding.hole?.isFollow!!
-
                 }
                 it.hole = hole
                 it.executePendingBindings()

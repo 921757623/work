@@ -24,26 +24,43 @@ import java.util.*
  * @version :1.0
  * @author
  */
+enum class HustHoleApiStatus { LOADING, ERROR, DONE }
+
 class HomeScreenViewModel : ViewModel() {
     private val _holeList = MutableLiveData<List<Hole>>()
+    private val _status = MutableLiveData<HustHoleApiStatus>()
 
+    val status: LiveData<HustHoleApiStatus> = _status
     val holeList: LiveData<List<Hole>> = _holeList
 
     init {
         getHomeScreenHoles()
     }
 
-    private fun getHomeScreenHoles() {
+    fun getHomeScreenHoles() {
         val currentTime = getCurrentTime()
-        viewModelScope.launch{
+        _status.value = HustHoleApiStatus.LOADING
+        viewModelScope.launch {
             try {
                 _holeList.value = HustHoleApi.retrofitService.getHoleList(currentTime)
+                _status.value = HustHoleApiStatus.DONE
             } catch (e: Exception) {
                 _holeList.value = listOf()
+                _status.value = HustHoleApiStatus.ERROR
                 e.printStackTrace()
             }
         }
     }
+
+//    fun getMoreHoles() {
+//        val currentTime = getCurrentTime()
+//        viewModelScope.launch {
+//            try {
+//
+//            }
+//        }
+//    }
+
     private fun getCurrentTime(): String {
         val date = Calendar.getInstance().time
         val sdf = SimpleDateFormat("yyyy-MM-dd HH:mm:ss", Locale.CHINA)

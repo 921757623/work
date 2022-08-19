@@ -8,6 +8,9 @@ import com.example.myhole.adapter.ItemAdapter
 import com.example.myhole.adapter.SpaceItemDecoration
 import com.example.myhole.data.HomeScreenViewModel
 import com.example.myhole.databinding.HomeScreenFragmentBinding
+import com.example.myhole.network.HustHoleApi
+import kotlinx.coroutines.GlobalScope
+import kotlinx.coroutines.launch
 
 class HomeScreenFragment : Fragment() {
     private lateinit var binding:HomeScreenFragmentBinding
@@ -27,5 +30,27 @@ class HomeScreenFragment : Fragment() {
         binding.recyclerView.adapter = ItemAdapter(this)
         binding.recyclerView.addItemDecoration(SpaceItemDecoration(0,20))
     }
-
+    private fun initRefresh() {
+        binding.refreshLayout.apply {
+            setRefreshHeader(StandardRefreshHeader(activity)) //设置自定义刷新头
+            setRefreshFooter(StandardRefreshFooter(activity)) //设置自定义刷新底
+            setOnRefreshListener {    //下拉刷新触发
+                GlobalScope.launch{
+                    try {
+                        viewModel.getHomeScreenHoles()
+                    } catch (e: Exception) {
+                        e.printStackTrace()
+                    }
+                    binding.recyclerView.isEnabled
+                }
+            }
+            setOnLoadMoreListener { _ ->  //上拉加载触发
+                if (viewModel.holeList.value == null) { //特殊情况，首次加载没加载出来又选择上拉加载
+                    viewModel.getHomeScreenHoles()
+                } else {
+                    viewModel
+                }
+            }
+        }
+    }
 }
