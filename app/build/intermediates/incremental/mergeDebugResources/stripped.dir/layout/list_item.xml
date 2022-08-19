@@ -94,7 +94,7 @@
                     android:layout_marginBottom="0dp"
                     android:layout_toEndOf="@id/up_num"
                     android:contentDescription="@string/comments_description"
-                    app:srcCompat="@drawable/ic_comment" />
+                    android:src="@drawable/ic_comment" />
 
                 <TextView
                     android:id="@+id/text_talk"
@@ -117,7 +117,7 @@
                     android:layout_marginBottom="0dp"
                     android:layout_toEndOf="@id/text_talk"
                     android:contentDescription="@string/star_description"
-                    android:tag="binding_7"                                                                     />
+                    android:tag="binding_7"                                                                   />
 
                 <TextView
                     android:id="@+id/text_star"
