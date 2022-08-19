@@ -5,6 +5,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -33,6 +34,9 @@ public abstract class ListItemBinding extends ViewDataBinding {
   public final ImageView imgTalk;
 
   @NonNull
+  public final RelativeLayout relativeLayout;
+
+  @NonNull
   public final TextView textStar;
 
   @NonNull
@@ -52,14 +56,15 @@ public abstract class ListItemBinding extends ViewDataBinding {
 
   protected ListItemBinding(Object _bindingComponent, View _root, int _localFieldCount,
       TextView content, TextView date, TextView holeNum, ImageView imgStar, ImageView imgTalk,
-      TextView textStar, TextView textTalk, ImageView threePoint, ImageView thumbsUp,
-      TextView upNum) {
+      RelativeLayout relativeLayout, TextView textStar, TextView textTalk, ImageView threePoint,
+      ImageView thumbsUp, TextView upNum) {
     super(_bindingComponent, _root, _localFieldCount);
     this.content = content;
     this.date = date;
     this.holeNum = holeNum;
     this.imgStar = imgStar;
     this.imgTalk = imgTalk;
+    this.relativeLayout = relativeLayout;
     this.textStar = textStar;
     this.textTalk = textTalk;
     this.threePoint = threePoint;

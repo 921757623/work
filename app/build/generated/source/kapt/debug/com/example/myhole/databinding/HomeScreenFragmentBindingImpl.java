@@ -18,6 +18,7 @@ public class HomeScreenFragmentBindingImpl extends HomeScreenFragmentBinding  {
         sViewsWithIds.put(R.id.search, 3);
         sViewsWithIds.put(R.id.imageView, 4);
         sViewsWithIds.put(R.id.refreshLayout, 5);
+        sViewsWithIds.put(R.id.nested_scroll, 6);
     }
     // views
     @NonNull
@@ -28,12 +29,13 @@ public class HomeScreenFragmentBindingImpl extends HomeScreenFragmentBinding  {
     // Inverse Binding Event Handlers
 
     public HomeScreenFragmentBindingImpl(@Nullable androidx.databinding.DataBindingComponent bindingComponent, @NonNull View root) {
-        this(bindingComponent, root, mapBindings(bindingComponent, root, 6, sIncludes, sViewsWithIds));
+        this(bindingComponent, root, mapBindings(bindingComponent, root, 7, sIncludes, sViewsWithIds));
     }
     private HomeScreenFragmentBindingImpl(androidx.databinding.DataBindingComponent bindingComponent, View root, Object[] bindings) {
         super(bindingComponent, root, 1
             , (androidx.constraintlayout.widget.ConstraintLayout) bindings[2]
             , (android.widget.ImageView) bindings[4]
+            , (androidx.core.widget.NestedScrollView) bindings[6]
             , (androidx.recyclerview.widget.RecyclerView) bindings[1]
             , (com.scwang.smart.refresh.layout.SmartRefreshLayout) bindings[5]
             , (android.widget.EditText) bindings[3]

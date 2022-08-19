@@ -2524,7 +2524,8 @@ drawable design_password_eye
 drawable design_snackbar_background
 drawable ic_baseline_search
 drawable ic_clock_black_24dp
-drawable ic_comment
+drawable ic_comment_active
+drawable ic_comment_inactive
 drawable ic_follow_active
 drawable ic_follow_inactive
 drawable ic_keyboard_black_24dp
@@ -2539,8 +2540,8 @@ drawable ic_mtrl_chip_checked_circle
 drawable ic_mtrl_chip_close_circle
 drawable ic_search_box
 drawable ic_threepoints
-drawable ic_thumbs
-drawable ic_thumbs_up
+drawable ic_thumb_inactive
+drawable ic_thumbs_active
 drawable m3_appbar_background
 drawable m3_popupmenu_background_overlay
 drawable m3_radiobutton_ripple
@@ -2910,6 +2911,7 @@ id navigation_bar_item_labels_group
 id navigation_bar_item_large_label_view
 id navigation_bar_item_small_label_view
 id navigation_header_container
+id nested_scroll
 id never
 id neverCompleteToEnd
 id neverCompleteToStart
@@ -2950,6 +2952,7 @@ id ratio
 id rectangles
 id recycler_view
 id refreshLayout
+id relative_layout
 id reverseSawtooth
 id right
 id rightToLeft

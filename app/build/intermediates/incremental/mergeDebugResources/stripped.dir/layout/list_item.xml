@@ -56,6 +56,7 @@
                 tools:text="一天晚上，我玩了几个小时的电脑，时针指向“九”了，还意犹未音传到了我的耳边：“九点了，赶快上床睡觉……”一天晚上，我玩了几个小时的电脑，时针指向“九”了，还意犹未尽。这时，令我讨厌的声音传到了我的耳边：“九点了，赶快上床睡觉……”听到这里，我不厌其烦地应了一声：“哦。”虽然嘴上是这么说的，但心里却舍不得离开，听到这里，我不厌其烦地应了一声：“哦。”虽然嘴上是这么说的，但心里却舍不得离开，" />
 
             <RelativeLayout
+                android:id="@+id/relative_layout"
                 android:layout_width="match_parent"
                 android:layout_height="27dp"
                 android:layout_below="@id/content"
@@ -71,7 +72,7 @@
                     android:layout_marginStart="2dp"
                     android:layout_marginBottom="0dp"
                     android:contentDescription="@string/thumbs_up_description"
-                    android:tag="binding_4"                                                     />
+                    android:tag="binding_4"                                                                 />
 
                 <TextView
                     android:id="@+id/up_num"
@@ -94,7 +95,7 @@
                     android:layout_marginBottom="0dp"
                     android:layout_toEndOf="@id/up_num"
                     android:contentDescription="@string/comments_description"
-                    android:src="@drawable/ic_comment" />
+                    android:tag="binding_6"                                                                    />
 
                 <TextView
                     android:id="@+id/text_talk"
@@ -104,7 +105,7 @@
                     android:layout_marginStart="6dp"
                     android:layout_marginBottom="2dp"
                     android:layout_toEndOf="@id/img_talk"
-                    android:tag="binding_6"                
+                    android:tag="binding_7"                
                     android:textColor="#B1B1B1"
                     tools:text="12" />
 
@@ -117,7 +118,7 @@
                     android:layout_marginBottom="0dp"
                     android:layout_toEndOf="@id/text_talk"
                     android:contentDescription="@string/star_description"
-                    android:tag="binding_7"                                                                   />
+                    android:tag="binding_8"                                                                   />
 
                 <TextView
                     android:id="@+id/text_star"
@@ -127,7 +128,7 @@
                     android:layout_marginStart="6dp"
                     android:layout_marginBottom="2dp"
                     android:layout_toEndOf="@id/img_star"
-                    android:tag="binding_8"                 
+                    android:tag="binding_9"                 
                     android:textColor="#B1B1B1"
                     tools:ignore="RelativeOverlap"
                     tools:text="3" />

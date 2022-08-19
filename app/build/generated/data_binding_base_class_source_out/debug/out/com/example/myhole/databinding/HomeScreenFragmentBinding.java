@@ -9,6 +9,7 @@ import android.widget.ImageView;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.constraintlayout.widget.ConstraintLayout;
+import androidx.core.widget.NestedScrollView;
 import androidx.databinding.Bindable;
 import androidx.databinding.DataBindingUtil;
 import androidx.databinding.ViewDataBinding;
@@ -27,6 +28,9 @@ public abstract class HomeScreenFragmentBinding extends ViewDataBinding {
   public final ImageView imageView;
 
   @NonNull
+  public final NestedScrollView nestedScroll;
+
+  @NonNull
   public final RecyclerView recyclerView;
 
   @NonNull
@@ -39,11 +43,12 @@ public abstract class HomeScreenFragmentBinding extends ViewDataBinding {
   protected HomeScreenViewModel mViewModel;
 
   protected HomeScreenFragmentBinding(Object _bindingComponent, View _root, int _localFieldCount,
-      ConstraintLayout Line, ImageView imageView, RecyclerView recyclerView,
-      SmartRefreshLayout refreshLayout, EditText search) {
+      ConstraintLayout Line, ImageView imageView, NestedScrollView nestedScroll,
+      RecyclerView recyclerView, SmartRefreshLayout refreshLayout, EditText search) {
     super(_bindingComponent, _root, _localFieldCount);
     this.Line = Line;
     this.imageView = imageView;
+    this.nestedScroll = nestedScroll;
     this.recyclerView = recyclerView;
     this.refreshLayout = refreshLayout;
     this.search = search;

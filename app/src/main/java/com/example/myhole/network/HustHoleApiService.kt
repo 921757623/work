@@ -2,8 +2,7 @@ package com.example.myhole.network
 
 
 import com.example.myhole.model.Hole
-import com.example.myhole.model.InteractFollow
-import com.example.myhole.model.InteractLikeOrUnlike
+import com.example.myhole.model.Interact
 import com.squareup.moshi.Moshi
 import com.squareup.moshi.kotlin.reflect.KotlinJsonAdapterFactory
 import okhttp3.ResponseBody
@@ -41,17 +40,25 @@ interface HustHoleApiService {
         @Query("offset") offset: Int = 0
     ): List<Hole>
 
+    @Headers("Authorization: eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJyb2xlIjoiVVNFUiIsImlkIjoiOTA3NyIsImV4cCI6MTY2MzM3Njk1MSwidGltZXN0YW1wIjoiMTY0OTU3NTIyOCJ9.YZYiOXZL57-mlC81kgbnZdDAr513cCJa2ccg9TJB-Y4")
+    @GET("hole/one")
+    fun getOneHole(@Body data: Interact): Hole
+
+    @Headers("Authorization: eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJyb2xlIjoiVVNFUiIsImlkIjoiOTA3NyIsImV4cCI6MTY2MzM3Njk1MSwidGltZXN0YW1wIjoiMTY0OTU3NTIyOCJ9.YZYiOXZL57-mlC81kgbnZdDAr513cCJa2ccg9TJB-Y4")
     @POST("interact/like")
-    suspend fun postInteractLike(@Body data: InteractLikeOrUnlike): Call<ResponseBody>
+    fun postInteractLike(@Body data: Interact): Call<ResponseBody>
 
+    @Headers("Authorization: eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJyb2xlIjoiVVNFUiIsImlkIjoiOTA3NyIsImV4cCI6MTY2MzM3Njk1MSwidGltZXN0YW1wIjoiMTY0OTU3NTIyOCJ9.YZYiOXZL57-mlC81kgbnZdDAr513cCJa2ccg9TJB-Y4")
     @POST("interact/unlike")
-    suspend fun postInteractUnLike(@Body data: InteractLikeOrUnlike): Call<ResponseBody>
+    fun postInteractUnLike(@Body data: Interact): Call<ResponseBody>
 
+    @Headers("Authorization: eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJyb2xlIjoiVVNFUiIsImlkIjoiOTA3NyIsImV4cCI6MTY2MzM3Njk1MSwidGltZXN0YW1wIjoiMTY0OTU3NTIyOCJ9.YZYiOXZL57-mlC81kgbnZdDAr513cCJa2ccg9TJB-Y4")
     @POST("interact/follow")
-    suspend fun postInteractFollow(@Body data: InteractFollow): Call<ResponseBody>
+    fun postInteractFollow(@Body data: Interact): Call<ResponseBody>
 
+    @Headers("Authorization: eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJyb2xlIjoiVVNFUiIsImlkIjoiOTA3NyIsImV4cCI6MTY2MzM3Njk1MSwidGltZXN0YW1wIjoiMTY0OTU3NTIyOCJ9.YZYiOXZL57-mlC81kgbnZdDAr513cCJa2ccg9TJB-Y4")
     @POST("interact/unfollow")
-    suspend fun postInteractUnFollow(@Body data: InteractFollow): Call<ResponseBody>
+    fun postInteractUnFollow(@Body data: Interact): Call<ResponseBody>
 }
 
 object HustHoleApi {
