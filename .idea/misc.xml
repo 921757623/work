@@ -4,12 +4,14 @@
     <option name="filePathToZoomLevelMap">
       <map>
         <entry key="..\:/MyHole/app/src/main/res/drawable/ic_baseline_search.xml" value="0.1" />
+        <entry key="..\:/MyHole/app/src/main/res/drawable/ic_comment.xml" value="0.1" />
+        <entry key="..\:/MyHole/app/src/main/res/drawable/ic_follow_inactive.xml" value="0.1" />
         <entry key="..\:/MyHole/app/src/main/res/drawable/ic_search_box.xml" value="0.1" />
         <entry key="..\:/MyHole/app/src/main/res/drawable/ic_thumbs.xml" value="0.1" />
         <entry key="..\:/MyHole/app/src/main/res/drawable/ic_thumbs_up.xml" value="0.1" />
         <entry key="..\:/MyHole/app/src/main/res/layout/activity_main.xml" value="0.14673913043478262" />
         <entry key="..\:/MyHole/app/src/main/res/layout/home_screen_fragment.xml" value="0.25" />
-        <entry key="..\:/MyHole/app/src/main/res/layout/list_item.xml" value="0.1" />
+        <entry key="..\:/MyHole/app/src/main/res/layout/list_item.xml" value="0.5163690476190477" />
       </map>
     </option>
   </component>

@@ -11,7 +11,6 @@ import androidx.annotation.Nullable;
 import androidx.databinding.Bindable;
 import androidx.databinding.DataBindingUtil;
 import androidx.databinding.ViewDataBinding;
-import com.example.myhole.HomeScreenFragment;
 import com.example.myhole.R;
 import com.example.myhole.model.Hole;
 import java.lang.Deprecated;
@@ -51,9 +50,6 @@ public abstract class ListItemBinding extends ViewDataBinding {
   @Bindable
   protected Hole mHole;
 
-  @Bindable
-  protected HomeScreenFragment mHomeScreenFragment;
-
   protected ListItemBinding(Object _bindingComponent, View _root, int _localFieldCount,
       TextView content, TextView date, TextView holeNum, ImageView imgStar, ImageView imgTalk,
       TextView textStar, TextView textTalk, ImageView threePoint, ImageView thumbsUp,
@@ -76,13 +72,6 @@ public abstract class ListItemBinding extends ViewDataBinding {
   @Nullable
   public Hole getHole() {
     return mHole;
-  }
-
-  public abstract void setHomeScreenFragment(@Nullable HomeScreenFragment homeScreenFragment);
-
-  @Nullable
-  public HomeScreenFragment getHomeScreenFragment() {
-    return mHomeScreenFragment;
   }
 
   @NonNull

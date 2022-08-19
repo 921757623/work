@@ -72,6 +72,10 @@
         "source": "D:\\MyHole\\app\\src\\main\\res\\mipmap-xxxhdpi\\ic_launcher.webp"
     },
     {
+        "merged": "D:\\MyHole\\app\\build\\intermediates\\merged_res\\debug\\drawable_ic_follow_active.xml.flat",
+        "source": "D:\\MyHole\\app\\src\\main\\res\\drawable\\ic_follow_active.xml"
+    },
+    {
         "merged": "D:\\MyHole\\app\\build\\intermediates\\merged_res\\debug\\mipmap-mdpi_ic_launcher.webp.flat",
         "source": "D:\\MyHole\\app\\src\\main\\res\\mipmap-mdpi\\ic_launcher.webp"
     },

@@ -1,6 +1,7 @@
 package com.example.myhole.adapter
 
 import android.graphics.Rect
+import android.util.Log
 import android.view.View
 import android.widget.ImageView
 import androidx.databinding.BindingAdapter
@@ -62,16 +63,3 @@ class SpaceItemDecoration(
     }
 }
 
-
-//@BindingAdapter("thumbupIcon")
-//fun changeThumbIcon(
-//    imageView: ImageView,
-//    isThumbUp: Boolean
-//) {
-//    imageView.setOnClickListener {
-//        if(!isThumbUp)
-//            imageView.setImageResource(R.drawable.ic_thumbs)
-//        else
-//            imageView.setImageResource(R.drawable.ic_thumbs_up)
-//    }
-//}

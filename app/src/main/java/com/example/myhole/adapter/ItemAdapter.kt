@@ -6,6 +6,7 @@ import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
 import com.example.myhole.HomeScreenFragment
+import com.example.myhole.R
 import com.example.myhole.databinding.ListItemBinding
 import com.example.myhole.model.Hole
 
@@ -17,14 +18,28 @@ import com.example.myhole.model.Hole
  * @author
  */
 class ItemAdapter : ListAdapter<Hole,
-        ItemAdapter.ItemViewHolder>(DiffCallback){
+        ItemAdapter.ItemViewHolder>(DiffCallback) {
 
     class ItemViewHolder(
         private var binding: ListItemBinding
     ) : RecyclerView.ViewHolder(binding.root) {
         fun bind(hole: Hole) {
-            binding.hole = hole
-            binding.executePendingBindings()
+            binding.let {
+                it.hole = hole
+                it.thumbsUp.setOnClickListener {
+                    if (hole.isThumb == true)
+                        binding.thumbsUp.setImageResource(R.drawable.ic_thumbs)
+                    else
+                        binding.thumbsUp.setImageResource(R.drawable.ic_thumbs_up)
+                }
+                it.imgStar.setOnClickListener {
+                    if (hole.isFollow == true)
+                        binding.imgStar.setImageResource(R.drawable.ic_follow_inactive)
+                    else
+                        binding.imgStar.setImageResource(R.drawable.ic_follow_active)
+                }
+                it.executePendingBindings()
+            }
         }
     }
 
