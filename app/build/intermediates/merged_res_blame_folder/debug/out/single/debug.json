@@ -56,6 +56,10 @@
         "source": "D:\\MyHole\\app\\src\\main\\res\\mipmap-mdpi\\ic_launcher_round.webp"
     },
     {
+        "merged": "D:\\MyHole\\app\\build\\intermediates\\merged_res\\debug\\drawable_error.png.flat",
+        "source": "D:\\MyHole\\app\\src\\main\\res\\drawable\\error.png"
+    },
+    {
         "merged": "D:\\MyHole\\app\\build\\intermediates\\merged_res\\debug\\drawable_ic_thumb_inactive.xml.flat",
         "source": "D:\\MyHole\\app\\src\\main\\res\\drawable\\ic_thumb_inactive.xml"
     },

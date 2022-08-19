@@ -25,6 +25,9 @@ public abstract class HomeScreenFragmentBinding extends ViewDataBinding {
   public final ConstraintLayout Line;
 
   @NonNull
+  public final ImageView error;
+
+  @NonNull
   public final ImageView imageView;
 
   @NonNull
@@ -43,10 +46,11 @@ public abstract class HomeScreenFragmentBinding extends ViewDataBinding {
   protected HomeScreenViewModel mViewModel;
 
   protected HomeScreenFragmentBinding(Object _bindingComponent, View _root, int _localFieldCount,
-      ConstraintLayout Line, ImageView imageView, NestedScrollView nestedScroll,
+      ConstraintLayout Line, ImageView error, ImageView imageView, NestedScrollView nestedScroll,
       RecyclerView recyclerView, SmartRefreshLayout refreshLayout, EditText search) {
     super(_bindingComponent, _root, _localFieldCount);
     this.Line = Line;
+    this.error = error;
     this.imageView = imageView;
     this.nestedScroll = nestedScroll;
     this.recyclerView = recyclerView;

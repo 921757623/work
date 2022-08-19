@@ -5,11 +5,13 @@ import com.example.myhole.model.Hole
 import com.example.myhole.model.Interact
 import com.squareup.moshi.Moshi
 import com.squareup.moshi.kotlin.reflect.KotlinJsonAdapterFactory
+import okhttp3.OkHttpClient
 import okhttp3.ResponseBody
 import retrofit2.Call
 import retrofit2.Retrofit
 import retrofit2.converter.moshi.MoshiConverterFactory
 import retrofit2.http.*
+import java.util.concurrent.TimeUnit
 
 /**
  *@classname HustHoleApiService
@@ -20,6 +22,10 @@ import retrofit2.http.*
  */
 private const val BASE_URL = "https://hustholev2.pivotstudio.cn/api/"
 
+private val okHttpClient = OkHttpClient.Builder()
+    .readTimeout(10, TimeUnit.SECONDS)
+    .connectTimeout(10, TimeUnit.SECONDS)
+    .build()
 
 private val moshi = Moshi.Builder()
     .add(KotlinJsonAdapterFactory())
@@ -28,6 +34,7 @@ private val moshi = Moshi.Builder()
 private val retrofit = Retrofit.Builder()
     .addConverterFactory(MoshiConverterFactory.create(moshi))
     .baseUrl(BASE_URL)
+    .client(okHttpClient)
     .build()
 
 interface HustHoleApiService {
@@ -35,9 +42,9 @@ interface HustHoleApiService {
     @GET("hole/list")
     suspend fun getHoleList(
         @Query("timestamp") timestamp: String,
+        @Query("offset") offset: Int = 0,
         @Query("limit") getHoleNum: Int = 20,
-        @Query("mode") mode: String = "LATEST_REPLY",
-        @Query("offset") offset: Int = 0
+        @Query("mode") mode: String = "LATEST_REPLY"
     ): List<Hole>
 
     @Headers("Authorization: eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJyb2xlIjoiVVNFUiIsImlkIjoiOTA3NyIsImV4cCI6MTY2MzM3Njk1MSwidGltZXN0YW1wIjoiMTY0OTU3NTIyOCJ9.YZYiOXZL57-mlC81kgbnZdDAr513cCJa2ccg9TJB-Y4")

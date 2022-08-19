@@ -15,6 +15,7 @@ import com.example.myhole.model.Hole
 import com.example.myhole.model.Interact
 import com.example.myhole.network.HustHoleApi
 import com.example.myhole.network.HustHoleApiService
+import okhttp3.ResponseBody
 
 /**
  *@classname ItemAdapter
@@ -23,9 +24,7 @@ import com.example.myhole.network.HustHoleApiService
  * @version :1.0
  * @author
  */
-class ItemAdapter(
-    val context: HomeScreenFragment
-) : ListAdapter<Hole,
+class ItemAdapter : ListAdapter<Hole,
         ItemAdapter.ItemViewHolder>(DiffCallback) {
 
     class ItemViewHolder(
@@ -36,19 +35,26 @@ class ItemAdapter(
                 it.thumbsUp.setOnClickListener {
                     if (binding.hole?.isThumb == true) {
                         binding.thumbsUp.setImageResource(R.drawable.ic_thumb_inactive)
+                        binding.hole?.thumb = binding.hole?.thumb!! - 1
+                        binding.upNum.text = binding.hole?.thumb.toString()
                         try {
                             HustHoleApi.retrofitService.postInteractUnLike(Interact(hole.holeID))
+                                .execute()
                         } catch (e: Exception) {
                             e.printStackTrace()
                         }
                     } else {
                         binding.thumbsUp.setImageResource(R.drawable.ic_thumbs_active)
+                        binding.hole?.thumb = binding.hole?.thumb!! + 1
+                        binding.upNum.text = binding.hole?.thumb.toString()
                         try {
                             HustHoleApi.retrofitService.postInteractLike(Interact(hole.holeID))
+                                .execute()
                         } catch (e: Exception) {
                             e.printStackTrace()
                         }
                     }
+                    binding.hole?.isThumb = !binding.hole?.isThumb!!
                 }
                 it.imgStar.setOnClickListener {
                     if (binding.hole?.isFollow == true) {
@@ -57,22 +63,22 @@ class ItemAdapter(
                         binding.textStar.text = binding.hole?.follow.toString()
                         try {
                             HustHoleApi.retrofitService.postInteractUnFollow(Interact(hole.holeID))
+                                .execute()
                         } catch (e: Exception) {
                             e.printStackTrace()
                         }
-                    }
-                    else {
+                    } else {
                         binding.imgStar.setImageResource(R.drawable.ic_follow_active)
                         binding.hole?.follow = binding.hole?.follow!! + 1
                         binding.textStar.text = binding.hole?.follow.toString()
                         try {
                             HustHoleApi.retrofitService.postInteractFollow(Interact(hole.holeID))
+                                .execute()
                         } catch (e: Exception) {
                             e.printStackTrace()
                         }
                     }
                     binding.hole?.isFollow = !binding.hole?.isFollow!!
-
                 }
                 it.hole = hole
                 it.executePendingBindings()
