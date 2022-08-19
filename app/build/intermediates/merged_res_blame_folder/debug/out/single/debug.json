@@ -48,10 +48,6 @@
         "source": "D:\\MyHole\\app\\src\\main\\res\\mipmap-xxxhdpi\\ic_launcher_round.webp"
     },
     {
-        "merged": "D:\\MyHole\\app\\build\\intermediates\\merged_res\\debug\\drawable_ic_comment.xml.flat",
-        "source": "D:\\MyHole\\app\\src\\main\\res\\drawable\\ic_comment.xml"
-    },
-    {
         "merged": "D:\\MyHole\\app\\build\\intermediates\\merged_res\\debug\\drawable_ic_baseline_search.xml.flat",
         "source": "D:\\MyHole\\app\\src\\main\\res\\drawable\\ic_baseline_search.xml"
     },
@@ -86,6 +82,14 @@
     {
         "merged": "D:\\MyHole\\app\\build\\intermediates\\merged_res\\debug\\layout_list_item.xml.flat",
         "source": "D:\\MyHole\\app\\src\\main\\res\\layout\\list_item.xml"
+    },
+    {
+        "merged": "D:\\MyHole\\app\\build\\intermediates\\merged_res\\debug\\drawable_ic_comment_inactive.xml.flat",
+        "source": "D:\\MyHole\\app\\src\\main\\res\\drawable\\ic_comment_inactive.xml"
+    },
+    {
+        "merged": "D:\\MyHole\\app\\build\\intermediates\\merged_res\\debug\\drawable_ic_comment_active.xml.flat",
+        "source": "D:\\MyHole\\app\\src\\main\\res\\drawable\\ic_comment_active.xml"
     },
     {
         "merged": "D:\\MyHole\\app\\build\\intermediates\\merged_res\\debug\\drawable_ic_threepoints.xml.flat",

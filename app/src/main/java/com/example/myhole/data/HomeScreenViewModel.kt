@@ -8,10 +8,9 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.example.myhole.MainActivity
-import com.example.myhole.R
 import com.example.myhole.network.HustHoleApi
 import com.example.myhole.model.Hole
+import com.example.myhole.model.Interact
 import kotlinx.coroutines.launch
 import java.lang.Exception
 import java.text.SimpleDateFormat
@@ -38,11 +37,9 @@ class HomeScreenViewModel : ViewModel() {
         val currentTime = getCurrentTime()
         viewModelScope.launch{
             try {
-                Log.e("Hello",currentTime)
                 _holeList.value = HustHoleApi.retrofitService.getHoleList(currentTime)
             } catch (e: Exception) {
                 _holeList.value = listOf()
-                Log.e("Hello","Hello")
                 e.printStackTrace()
             }
         }
@@ -52,5 +49,6 @@ class HomeScreenViewModel : ViewModel() {
         val sdf = SimpleDateFormat("yyyy-MM-dd HH:mm:ss", Locale.CHINA)
         return sdf.format(date).toString()
     }
+
 
 }

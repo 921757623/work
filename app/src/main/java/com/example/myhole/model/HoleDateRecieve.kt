@@ -14,14 +14,13 @@ import java.util.*
  * @author
  */
 
-data class InteractLikeOrUnlike(
-    val holeId: Int,
-    val replyId: Int
-) {}
+class Interact(
+    val holeId: String?
+) {
 
-data class InteractFollow(
-    val holeId: Int
-) {}
+}
+
+
 
 /**
  * Hole
@@ -40,7 +39,7 @@ data class Hole (
     /**
      * 收藏数
      */
-    val follow: Long? = null,
+    var follow: Int? = null,
 
     /**
      * 小树林id
@@ -62,22 +61,22 @@ data class Hole (
     /**
      * 是否收藏
      */
-    val isFollow: Boolean? = null,
+    var isFollow: Boolean? = null,
 
     /**
      * 是否属于自己
      */
-    val isMine: Boolean? = null,
+    var isMine: Boolean? = null,
 
     /**
      * 是否评论
      */
-    val isReply: Boolean? = null,
+    var isReply: Boolean? = null,
 
     /**
      * 是否点赞
      */
-    val isThumb: Boolean? = null,
+    var isThumb: Boolean? = null,
 
     /**
      * 最新评论时间
@@ -87,12 +86,12 @@ data class Hole (
     /**
      * 评论数
      */
-    val reply: Long? = null,
+    var reply: Int? = null,
 
     /**
      * 点赞数
      */
-    val thumb: Long? = null
+    var thumb: Int? = null
 ){
 
 }
