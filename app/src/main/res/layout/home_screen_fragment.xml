@@ -49,6 +49,23 @@
                 app:layout_constraintTop_toTopOf="parent" />
         </androidx.constraintlayout.widget.ConstraintLayout>
 
+        <ImageView
+            android:id="@+id/error"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            app:apiStatus="@{viewModel.status}" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/error"
+            android:layout_centerHorizontal="true"
+            android:text="@string/error"
+            android:textColor="#CBCBCB"
+            android:textSize="16sp"
+            app:apiStatus="@{viewModel.status}" />
+
         <com.scwang.smart.refresh.layout.SmartRefreshLayout
             android:id="@+id/refreshLayout"
             android:layout_width="match_parent"
@@ -58,12 +75,6 @@
             <com.scwang.smart.refresh.header.ClassicsHeader
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content" />
-
-            <ImageView
-                android:id="@+id/error"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center" />
 
             <androidx.core.widget.NestedScrollView
                 android:id="@+id/nested_scroll"

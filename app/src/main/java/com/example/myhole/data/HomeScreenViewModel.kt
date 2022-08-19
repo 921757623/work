@@ -29,12 +29,15 @@ enum class HustHoleApiStatus { LOADING, ERROR, DONE }
 class HomeScreenViewModel : ViewModel() {
     private val _holeList = MutableLiveData<List<Hole>>()
     private val _status = MutableLiveData<HustHoleApiStatus>()
+    private val _time = MutableLiveData<Int>()
 
     val status: LiveData<HustHoleApiStatus> = _status
     val holeList: LiveData<List<Hole>> = _holeList
+    val time: LiveData<Int> = _time
 
     init {
         getHomeScreenHoles()
+        _time.value = 0
     }
 
     fun getHomeScreenHoles() {
@@ -52,14 +55,27 @@ class HomeScreenViewModel : ViewModel() {
         }
     }
 
-//    fun getMoreHoles() {
-//        val currentTime = getCurrentTime()
-//        viewModelScope.launch {
-//            try {
-//
-//            }
-//        }
-//    }
+    fun getMoreHoles(time: Int) {
+        val currentTime = getCurrentTime()
+        _status.value = HustHoleApiStatus.LOADING
+        viewModelScope.launch {
+            try {
+                val newItems = HustHoleApi.retrofitService.getHoleList(currentTime, time * 20)
+                if(!newItems.equals("")) {
+                    val newList = _holeList.value!!.toMutableList()
+                    newList.addAll(newItems)
+                    _holeList.value = newList.toList()
+                    _status.value = HustHoleApiStatus.DONE
+                }
+                else
+                    _status.value = HustHoleApiStatus.ERROR
+            } catch (e: Exception) {
+                _holeList.value = listOf()
+                _status.value = HustHoleApiStatus.ERROR
+                e.printStackTrace()
+            }
+        }
+    }
 
     private fun getCurrentTime(): String {
         val date = Calendar.getInstance().time

@@ -24,9 +24,7 @@ import okhttp3.ResponseBody
  * @version :1.0
  * @author
  */
-class ItemAdapter(
-    val context: HomeScreenFragment
-) : ListAdapter<Hole,
+class ItemAdapter : ListAdapter<Hole,
         ItemAdapter.ItemViewHolder>(DiffCallback) {
 
     class ItemViewHolder(
@@ -40,7 +38,8 @@ class ItemAdapter(
                         binding.hole?.thumb = binding.hole?.thumb!! - 1
                         binding.upNum.text = binding.hole?.thumb.toString()
                         try {
-                            HustHoleApi.retrofitService.postInteractUnLike(Interact(hole.holeID)).execute()
+                            HustHoleApi.retrofitService.postInteractUnLike(Interact(hole.holeID))
+                                .execute()
                         } catch (e: Exception) {
                             e.printStackTrace()
                         }
@@ -49,7 +48,8 @@ class ItemAdapter(
                         binding.hole?.thumb = binding.hole?.thumb!! + 1
                         binding.upNum.text = binding.hole?.thumb.toString()
                         try {
-                            HustHoleApi.retrofitService.postInteractLike(Interact(hole.holeID)).execute()
+                            HustHoleApi.retrofitService.postInteractLike(Interact(hole.holeID))
+                                .execute()
                         } catch (e: Exception) {
                             e.printStackTrace()
                         }
@@ -62,17 +62,18 @@ class ItemAdapter(
                         binding.hole?.follow = binding.hole?.follow!! - 1
                         binding.textStar.text = binding.hole?.follow.toString()
                         try {
-                            HustHoleApi.retrofitService.postInteractUnFollow(Interact(hole.holeID)).execute()
+                            HustHoleApi.retrofitService.postInteractUnFollow(Interact(hole.holeID))
+                                .execute()
                         } catch (e: Exception) {
                             e.printStackTrace()
                         }
-                    }
-                    else {
+                    } else {
                         binding.imgStar.setImageResource(R.drawable.ic_follow_active)
                         binding.hole?.follow = binding.hole?.follow!! + 1
                         binding.textStar.text = binding.hole?.follow.toString()
                         try {
-                            HustHoleApi.retrofitService.postInteractFollow(Interact(hole.holeID)).execute()
+                            HustHoleApi.retrofitService.postInteractFollow(Interact(hole.holeID))
+                                .execute()
                         } catch (e: Exception) {
                             e.printStackTrace()
                         }

@@ -2522,6 +2522,7 @@ drawable design_ic_visibility
 drawable design_ic_visibility_off
 drawable design_password_eye
 drawable design_snackbar_background
+drawable error
 drawable ic_baseline_search
 drawable ic_clock_black_24dp
 drawable ic_comment_active
@@ -2781,6 +2782,7 @@ id endToStart
 id end_padder
 id enterAlways
 id enterAlwaysCollapsed
+id error
 id exitUntilCollapsed
 id expand_activities_button
 id expanded_menu
@@ -3346,6 +3348,7 @@ string character_counter_pattern
 string chip_text
 string clear_text_end_icon_content_description
 string comments_description
+string error
 string error_icon_content_description
 string exposed_dropdown_menu_content_description
 string fab_transformation_scrim_behavior
