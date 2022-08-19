@@ -1,9 +1,5 @@
 [
     {
-        "merged": "D:\\MyHole\\app\\build\\intermediates\\merged_res\\debug\\drawable_ic_thumbs.xml.flat",
-        "source": "D:\\MyHole\\app\\src\\main\\res\\drawable\\ic_thumbs.xml"
-    },
-    {
         "merged": "D:\\MyHole\\app\\build\\intermediates\\merged_res\\debug\\drawable_ic_launcher_background.xml.flat",
         "source": "D:\\MyHole\\app\\src\\main\\res\\drawable\\ic_launcher_background.xml"
     },
@@ -64,6 +60,10 @@
         "source": "D:\\MyHole\\app\\src\\main\\res\\mipmap-mdpi\\ic_launcher_round.webp"
     },
     {
+        "merged": "D:\\MyHole\\app\\build\\intermediates\\merged_res\\debug\\drawable_ic_thumb_inactive.xml.flat",
+        "source": "D:\\MyHole\\app\\src\\main\\res\\drawable\\ic_thumb_inactive.xml"
+    },
+    {
         "merged": "D:\\MyHole\\app\\build\\intermediates\\merged_res\\debug\\layout_activity_main.xml.flat",
         "source": "D:\\MyHole\\app\\src\\main\\res\\layout\\activity_main.xml"
     },
@@ -96,7 +96,7 @@
         "source": "D:\\MyHole\\app\\src\\main\\res\\mipmap-anydpi-v26\\ic_launcher.xml"
     },
     {
-        "merged": "D:\\MyHole\\app\\build\\intermediates\\merged_res\\debug\\drawable_ic_thumbs_up.xml.flat",
-        "source": "D:\\MyHole\\app\\src\\main\\res\\drawable\\ic_thumbs_up.xml"
+        "merged": "D:\\MyHole\\app\\build\\intermediates\\merged_res\\debug\\drawable_ic_thumbs_active.xml.flat",
+        "source": "D:\\MyHole\\app\\src\\main\\res\\drawable\\ic_thumbs_active.xml"
     }
 ]

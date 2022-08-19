@@ -71,7 +71,7 @@
                     android:layout_marginStart="2dp"
                     android:layout_marginBottom="0dp"
                     android:contentDescription="@string/thumbs_up_description"
-                    android:tag="binding_4"                                                     />
+                    android:tag="binding_4"                                                                 />
 
                 <TextView
                     android:id="@+id/up_num"

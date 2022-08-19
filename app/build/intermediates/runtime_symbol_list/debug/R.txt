@@ -2538,8 +2538,8 @@ int drawable ic_mtrl_chip_checked_circle 0x7f070072
 int drawable ic_mtrl_chip_close_circle 0x7f070073
 int drawable ic_search_box 0x7f070074
 int drawable ic_threepoints 0x7f070075
-int drawable ic_thumbs 0x7f070076
-int drawable ic_thumbs_up 0x7f070077
+int drawable ic_thumb_inactive 0x7f070076
+int drawable ic_thumbs_active 0x7f070077
 int drawable m3_appbar_background 0x7f070078
 int drawable m3_popupmenu_background_overlay 0x7f070079
 int drawable m3_radiobutton_ripple 0x7f07007a

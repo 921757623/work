@@ -31,8 +31,8 @@ class HomeScreenFragment : Fragment() {
     isThumbUp: Boolean
 ) {
         if(!isThumbUp)
-            imageView.setImageResource(R.drawable.ic_thumbs)
+            imageView.setImageResource(R.drawable.ic_thumb_inactive)
         else
-            imageView.setImageResource(R.drawable.ic_thumbs_up)
+            imageView.setImageResource(R.drawable.ic_thumbs_active)
     }
 }
